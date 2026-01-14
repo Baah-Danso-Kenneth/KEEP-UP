@@ -17,9 +17,9 @@ const LandingPage = () => {
   return (
     <>
       <ReactLenis root />
-      <div className="react-nav-wrapper overflow-x-hidden bg-[#171717] text-white">
+      <div className="react-nav-wrapper overflow-x-hidden bg-[var(--bg)] text-[var(--fg)] transition-colors duration-300">
         <ReactNav containerRef={containerRef} />
-    
+
         <div ref={containerRef}>
           <HeroSection />
           <HowItWorks />

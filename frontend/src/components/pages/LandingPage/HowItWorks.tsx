@@ -97,21 +97,21 @@ const HowItWorks = () => {
     }, { scope: sectionRef });
 
     return (
-        <section ref={sectionRef} className="how-it-works-section py-32 bg-black relative">
+        <section ref={sectionRef} className="how-it-works-section py-32 bg-[var(--bg)] relative transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-8 lg:px-16 flex flex-col lg:flex-row gap-20">
                 {/* Left Column - Pinned by GSAP */}
                 <div ref={leftColRef} className="lg:w-[42%] h-fit pt-8">
-                    <h2 className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.1] text-white font-[family-name:var(--font-ppMontreal)] mb-8">
+                    <h2 className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.1] text-[var(--fg)] font-[family-name:var(--font-ppMontreal)] mb-8 transition-colors duration-300">
                         How it <br />
-                        <span className="text-white/60">Works.</span>
+                        <span className="text-[var(--fg)]/60">Works.</span>
                     </h2>
-                    <p className="text-xl text-white/50 leading-relaxed font-medium mb-12 max-w-md">
+                    <p className="text-xl text-[var(--fg)]/50 leading-relaxed font-medium mb-12 max-w-md transition-colors duration-300">
                         OptimalYou is more than just a tracker. It's an intelligent ecosystem designed to evolve with your ambitions.
                     </p>
-                    <button className="group flex items-center gap-4 bg-white text-black px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-200 transition-all duration-300">
+                    <button className="group flex items-center gap-4 bg-[var(--fg)] text-[var(--bg)] px-8 py-3 rounded-full font-bold text-lg hover:opacity-90 transition-all duration-300">
                         Start Journey
-                        <div className="bg-black rounded-full p-2 group-hover:translate-x-1 transition-transform duration-300 flex items-center justify-center">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <div className="bg-[var(--bg)] rounded-full p-2 group-hover:translate-x-1 transition-transform duration-300 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--fg)]">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>

@@ -1,60 +1,62 @@
 @import "tailwindcss";
 
 :root {
-    /* Light Mode - Wellness & Vitality */
-    --bg: oklch(98% 0.01 260);
-    --fg: oklch(20% 0.02 260);
-    --primary: oklch(78% 0.16 145);
-    /* Vitality Green */
-    --secondary: oklch(68% 0.18 35);
-    /* Energy Orange */
-    --accent: oklch(62% 0.15 240);
-    /* Zen Blue */
-    --muted: oklch(92% 0.02 260);
-    --border: oklch(88% 0.02 260);
-    --card: oklch(100% 0 0);
+  /* Light Mode - Wellness & Vitality */
+  --bg: oklch(98% 0.01 260);
+  --fg: oklch(20% 0.02 260);
+  --primary: oklch(78% 0.16 145);
+  /* Vitality Green */
+  --secondary: oklch(68% 0.18 35);
+  /* Energy Orange */
+  --accent: oklch(62% 0.15 240);
+  /* Zen Blue */
+  --muted: oklch(92% 0.02 260);
+  --border: oklch(88% 0.02 260);
+  --card: oklch(100% 0 0);
+  --navbar-bg: rgba(255, 255, 255, 0.8);
+  --navbar-fg: oklch(20% 0.02 260);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* Dark Mode - Deep Focus & Recovery */
-        --bg: oklch(18% 0.02 260);
-        --fg: oklch(95% 0.01 260);
-        --primary: oklch(82% 0.14 145);
-        --secondary: oklch(72% 0.16 35);
-        --accent: oklch(68% 0.12 240);
-        --muted: oklch(25% 0.03 260);
-        --border: oklch(30% 0.03 260);
-        --card: oklch(22% 0.02 260);
-    }
+.dark {
+  /* Dark Mode - Deep Focus & Recovery */
+  --bg: oklch(15% 0.02 260);
+  --fg: oklch(95% 0.01 260);
+  --primary: oklch(82% 0.14 145);
+  --secondary: oklch(72% 0.16 35);
+  --accent: oklch(68% 0.12 240);
+  --muted: oklch(25% 0.03 260);
+  --border: oklch(30% 0.03 260);
+  --card: oklch(20% 0.02 260);
+  --navbar-bg: rgba(15, 15, 15, 0.8);
+  --navbar-fg: oklch(95% 0.01 260);
 }
 
 @theme inline {
-    --color-background: var(--bg);
-    --color-foreground: var(--fg);
-    --color-primary: var(--primary);
-    --color-secondary: var(--secondary);
-    --color-accent: var(--accent);
-    --color-muted: var(--muted);
-    --color-border: var(--border);
-    --color-card: var(--card);
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
 
-    --font-sfBold: var(--font-sfBold);
-    --font-sfReg: var(--font-sfReg);
-    --font-sfBlack: var(--font-sfBlack);
+  --font-sfBold: var(--font-sfBold);
+  --font-sfReg: var(--font-sfReg);
+  --font-sfBlack: var(--font-sfBlack);
 }
 
 ::selection {
-    background: var(--primary);
-    color: oklch(20% 0.02 260);
+  background: var(--primary);
+  color: oklch(20% 0.02 260);
 }
 
 body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: var(--font-sfReg), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sfReg), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
@@ -84,7 +86,7 @@ body {
 }
 
 .grid-card {
-  background-color: #e6ccf5;
+  background-color: var(--muted);
   border-radius: 2.5rem;
   overflow: hidden;
   padding: 2rem;
@@ -111,7 +113,7 @@ body {
   position: relative;
   border-radius: 1.5rem;
   overflow: hidden;
-  background: #2d0a4d;
+  background: var(--accent);
 }
 
 .grid-card-image {
@@ -131,7 +133,7 @@ body {
 }
 
 .image-overlay-text {
-  color: #fff;
+  color: var(--bg);
   font-size: 2.5rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -150,22 +152,23 @@ body {
 .grid-card-title {
   font-size: 2rem;
   font-weight: 500;
-  color: #000;
+  color: var(--fg);
   line-height: 1.2;
   font-family: var(--font-ppMontreal), sans-serif;
 }
 
 .grid-card-description {
   font-size: 1.1rem;
-  color: #333;
+  color: var(--fg);
+  opacity: 0.8;
   line-height: 1.6;
   font-weight: 400;
 }
 
 .grid-card-button {
   align-self: flex-start;
-  background: #000;
-  color: #fff;
+  background: var(--fg);
+  color: var(--bg);
   padding: 1rem 2.5rem;
   border-radius: 9999px;
   font-weight: 600;
@@ -175,7 +178,8 @@ body {
 }
 
 .grid-card-button:hover {
-  background: #1a1a1a;
+  background: var(--fg);
+  opacity: 0.9;
   transform: scale(1.05);
 }
 
@@ -237,7 +241,7 @@ body {
 
 /* How It Works Section */
 .how-it-works-card {
-  background-color: #e6ccf5;
+  background-color: var(--muted);
   border-radius: 2.5rem;
   padding: 3rem;
   display: flex;
@@ -255,12 +259,12 @@ body {
   flex-shrink: 0;
   width: 80px;
   height: 80px;
-  background: rgba(0, 0, 0, 0.05);
+  background: color-mix(in srgb, var(--fg) 5%, transparent);
   border-radius: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
+  color: var(--fg);
 }
 
 .card-content {
@@ -274,23 +278,25 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--fg);
+  opacity: 0.4;
 }
 
 .card-title {
   font-size: 2.25rem;
   font-weight: 500;
-  color: #000;
+  color: var(--fg);
   line-height: 1.1;
   font-family: var(--font-ppMontreal), sans-serif;
 }
 
 .card-description {
   font-size: 1.15rem;
-  color: #333;
+  color: var(--fg);
   line-height: 1.6;
   font-weight: 400;
   max-width: 500px;
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
@@ -308,4 +314,14 @@ body {
   .card-title {
     font-size: 1.75rem;
   }
+}
+
+/* Navbar Logo Theme Logic */
+.nav-logo {
+  filter: invert(1);
+  transition: filter 0.3s ease;
+}
+
+.dark .nav-logo {
+  filter: invert(0);
 }
