@@ -1,4 +1,5 @@
 import React from 'react';
+import PrimaryButton from '../../common/PrimaryButton';
 function HeroSection() {
     return (
         <section className="relative w-full h-screen flex items-center overflow-hidden bg-[var(--bg)] transition-colors duration-300">
@@ -22,24 +23,9 @@ function HeroSection() {
                         and a community dedicated to growth. Everywhere you grow.
                     </p>
 
-                    <button className="group flex items-center gap-4 bg-[var(--fg)] text-[var(--bg)] px-8 py-3 rounded-full font-bold text-lg hover:opacity-90 transition-all duration-300">
+                    <PrimaryButton href="/register" className="px-6 py-2 text-base">
                         Get started
-                        <div className="bg-[var(--bg)] rounded-full p-2 group-hover:translate-x-1 transition-transform duration-300 flex items-center justify-center">
-                            <svg
-                                width="16"
-                                height="16"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="text-[var(--fg)]"
-                            >
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                    </button>
+                    </PrimaryButton>
                 </div>
             </div>
         </section>

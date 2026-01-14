@@ -9,6 +9,7 @@ import HamburgerIcon from "./HamburgerIcon";
 import MenuOverlay from "./MenuOverlay";
 import Link from "next/link";
 import ThemeSwitcher from "../ThemeSwitcher";
+import PrimaryButton from "../common/PrimaryButton";
 
 
 
@@ -213,13 +214,13 @@ const ReactNav: React.FC<ReactNavProps> = ({ containerRef }) => {
 
   return (
     <nav className="fixed top-0 w-screen h-[100svh] pointer-events-none overflow-hidden z-[100] font-[family-name:var(--font-ppMontreal)]">
-      <div className="fixed top-0 left-0 w-screen p-8 flex justify-between items-center pointer-events-auto text-[var(--fg)] z-[110] transition-colors duration-300">
-        <div className="w-42 h-0 flex items-center">
+      <div className="fixed top-0 left-0 w-screen px-8 py-4 flex justify-between items-center pointer-events-auto text-[var(--fg)] z-[110] transition-colors duration-300 bg-[var(--navbar-bg)] backdrop-blur-md">
+        <div className="w-56 flex items-center">
           <Link href="/">
             <img
               src="/assets/images/keep-up-fixed.svg"
               alt="Keep Up Logo"
-              className="h-full w-auto object-contain nav-logo transition-all duration-300"
+              className="w-full h-auto object-contain nav-logo transition-all duration-300"
             />
           </Link>
 
@@ -237,12 +238,9 @@ const ReactNav: React.FC<ReactNavProps> = ({ containerRef }) => {
               >
                 Login
               </Link>
-              <Link
-                href="/register"
-                className="px-6 py-2 bg-white text-black rounded-full text-sm font-semibold hover:bg-gray-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-              >
+              <PrimaryButton href="/register" className="text-sm px-6 py-1.5">
                 Join
-              </Link>
+              </PrimaryButton>
             </div>
           )}
 
