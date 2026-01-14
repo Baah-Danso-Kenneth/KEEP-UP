@@ -1,12 +1,16 @@
 "use client"
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 import SolidLogo from './SolidLogo';
 
 const FloatingActions = () => {
     const [isScrollVisible, setIsScrollVisible] = useState(false);
+    const pathname = usePathname();
+
+
 
     useEffect(() => {
         const checkScrollPosition = () => {
@@ -26,6 +30,8 @@ const FloatingActions = () => {
             behavior: 'smooth'
         });
     };
+
+    if (pathname === '/login' || pathname === '/register') return null;
 
     return (
         <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end gap-4">
