@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from api.routes import (
     user_route, auth,
+    onboarding
 )
 from core.config import settings 
 from core.database import init_db, close_db
@@ -48,6 +49,7 @@ app.add_middleware(
 
 app.include_router(user_route.router, prefix="/api")
 app.include_router(auth.router, prefix="/api")
+app.include_router(onboarding.router, prefix="/api")
 
 
 @app.get("/", tags=["System"])
@@ -70,6 +72,8 @@ async def health_check():
         "version": settings.APP_VERSION,
         "environment": settings.ENVIRONMENT
     }
+
+
 
 
 
