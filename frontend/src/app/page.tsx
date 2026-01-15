@@ -1,3 +1,5 @@
+import LandingPage from "@/components/pages/LandingPage";
+
 export default function Page() {
-  return <div>keep up</div>;
+  return <LandingPage/>;
 }
