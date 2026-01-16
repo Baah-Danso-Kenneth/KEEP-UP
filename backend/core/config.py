@@ -21,7 +21,7 @@ class Settings(BaseSettings):
 
     GROQ_API_KEY: str | None = None
     OPIK_API_KEY: str | None = None
-    OPIK_PROJECT_NAME: str = "Euexia"
+    OPIK_PROJECT_NAME: str = "KEEP-UP"
     OPIK_WORKSPACE: str = "default"
     WEATHER_API_KEY: str | None = None
 
