@@ -4,7 +4,7 @@ from functools import lru_cache
 
 
 class Settings(BaseSettings):
-    APP_NAME: str = "WELBIN"
+    APP_NAME: str = "KEEP-UP API"
     APP_VERSION: str = "1.0.0"
     ENVIRONMENT: str = "development"
     DEBUG: bool = True
@@ -21,7 +21,7 @@ class Settings(BaseSettings):
 
     GROQ_API_KEY: str | None = None
     OPIK_API_KEY: str | None = None
-    OPIK_PROJECT_NAME: str = "Euexia"
+    OPIK_PROJECT_NAME: str = "KEEP-UP"
     OPIK_WORKSPACE: str = "default"
     WEATHER_API_KEY: str | None = None
 
